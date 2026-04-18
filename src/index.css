@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Arial Black", Gadget, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --color-ink: #1A1A1B;
+  --color-paper: #FDFCF8;
+  --color-accent: #2E5BFF;
+  --color-line: rgba(26, 26, 27, 0.15);
+  --color-box: #EEECE1;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-[-0.04em];
+  }
+}
+
+@layer components {
+  .theme-badge {
+    @apply inline-block bg-ink text-paper px-3 py-1 text-[10px] font-black uppercase tracking-wider mb-4;
+  }
+
+  .main-grid {
+    @apply grid lg:grid-cols-[420px_1fr] min-h-screen border-[12px] border-ink;
+  }
+
+  .sidebar-section {
+    @apply p-10 border-r border-line flex flex-col justify-between bg-paper;
+  }
+
+  .content-section {
+    @apply p-10 bg-paper;
+  }
+
+  .bold-header {
+    @apply text-[82px] leading-[0.85] font-black uppercase tracking-[-4px] mb-6;
+  }
+
+  .brutal-card {
+    @apply border-t border-line pt-6 mb-8;
+  }
+
+  .step-number {
+    @apply font-display text-4xl text-accent mb-2;
+  }
+
+  .accent-banner {
+    @apply bg-accent text-white p-6 flex justify-between items-center rounded-sm;
+  }
+}
